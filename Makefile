@@ -1,26 +1,29 @@
-TARGET = snake
-CC = gcc
-CFLAGS = -std=c99 -Werror -Wall -ggdb
+EXE := snake
 
-default: $(TARGET)
+SRC_DIR := src
+OBJ_DIR := obj
 
-$(TARGET): main.o food.o map.o snake.o main_menu.o game.o 
-	$(CC) $(CFLAGS) -o $(TARGET) main.o food.o map.o snake.o main_menu.o game.o
+SRC := $(wildcard $(SRC_DIR)/*.c)
+OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-map.o: map.h map.c
-	$(CC) $(CFLAGS) -c map.c
-	
-snake.o: snake.h snake.c
-	$(CC) $(CFLAGS) -c snake.c
+CPPFLAGS := -Iinclude
+CFLAGS   := -Wall
+LDFLAGS  := -Llib
+LDLIBS   := -lm
 
-food.o: food.h food.c
-	$(CC) $(CFLAGS) -c food.c
+.PHONY: all clean
 
-main_menu.o: main_menu.h main_menu.c
-	$(CC) $(CFLAGS) -c main_menu.c
-	
-game.o: game.h game.c
-	$(CC) $(CFLAGS) -c game.c
+all: $(EXE)
+
+$(EXE): $(OBJ)
+	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir $@
 
 clean:
-	$(RM) *.o $(TARGET)
+	$(RM) $(OBJ)
+
