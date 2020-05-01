@@ -21,15 +21,17 @@
 11. go to step 4
 */
 
-#include "map.h"
-#include "snake.h"
-#include "food.h"
+#include "main_menu.h"
+
 
 int main( void )
 {
+	// 0. bring a menu
+	draw_main_menu();
 	// 1. draw the map on the screen
 	draw_map();
 	// 2. spawn snake on the center of the map
+	spawn_snake();
 	// 3. spawn food at a random location of the map
 	// 4. while user don't want to exit
 	// 5. move forward the snake

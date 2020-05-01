@@ -1,5 +1,8 @@
 #ifndef MAP_H
 #define MAP_H
-#endif
+
+#include "game.h"
 
 void draw_map();
+
+#endif
