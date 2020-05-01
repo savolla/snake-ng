@@ -9,7 +9,7 @@ here I'll share a callgraph (my version) of my project. maybe someone would like
 
 callgraph (experimental project design)
 ---------------------------------------
-<img src="./callgraph.jpg">
+<img src="./doc/callgraph.jpg">
 
 
 
