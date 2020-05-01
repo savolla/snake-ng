@@ -1,20 +1,15 @@
 #include "food.h"
-#include <time.h>
-#include <stdlib.h>
 
-#define FOOD_X_COORDINATE ( 0 )
-#define FOOD_Y_COORDINATE ( 0 )
+#define FOOD_X_COOR  ( BUFFER_X_SIZE / 2 )
+#define FOOD_Y_COOR  ( BUFFER_X_SIZE / 2 )
 
-srand( time( NULL ) );
-// srand(time(NULL));
-// int r = rand();
 
 void draw_food( void )
 {
-
+    printf( "LOG: draw_food OK" );
 }
 
 void spawn_food_at_random_loc( void )
 {
-
+    printf( "LOG: spawn_food_at_random_loc OK" );
 }

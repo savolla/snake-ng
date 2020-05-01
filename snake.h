@@ -1,8 +1,8 @@
-#ifndef SNAKE_H
-#define SNAKE_H
+#ifndef __SNAKE_H__
+#define __SNAKE_H__
 
 #include "game.h"
 
-void spawn_snake();
+void draw_snake();
 
-#endif
+#endif // __SNAKE_H__

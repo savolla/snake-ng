@@ -9,3 +9,4 @@
 #include <stdio.h>
 
 void scene_drawer();
+int generate_random_integer( int range );

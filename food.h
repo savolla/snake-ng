@@ -3,7 +3,7 @@
 
 // user defined libraries
 #include "game.h"
-#include "stdio.h"
+#include <stdio.h>
 
 // third party libraries
 #include <time.h>
